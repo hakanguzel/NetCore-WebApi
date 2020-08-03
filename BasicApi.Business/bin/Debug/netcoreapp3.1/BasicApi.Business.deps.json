@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "BasicApi.Business/1.0.0": {
+        "dependencies": {
+          "BasicApi.Data": "1.0.0"
+        },
+        "runtime": {
+          "BasicApi.Business.dll": {}
+        }
+      },
+      "BasicApi.Data/1.0.0": {
+        "runtime": {
+          "BasicApi.Data.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BasicApi.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BasicApi.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

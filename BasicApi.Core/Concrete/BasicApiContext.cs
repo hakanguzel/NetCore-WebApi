@@ -1,8 +1,7 @@
-﻿using System;
+﻿using BasicApi.Data.DataAccess;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BasicApi.Data.DataAccess
+namespace BasicApi.Core.Concrete
 {
     public partial class BasicApiContext : DbContext
     {

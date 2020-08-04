@@ -2,46 +2,50 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BasicApi.Business.Abstract;
+using BasicApi.Data.DataAccess;
+using BasicApi.Data.DtoModels;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BasicApi.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        // GET: api/<CustomersController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private ICustomerService _customerService;
+        public CustomersController(ICustomerService customerService)
         {
-            return new string[] { "value1", "value2" };
+            _customerService = customerService;
         }
 
-        // GET api/<CustomersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+
+        [HttpGet("GetCustomerList")]
+        public async Task<ServiceResponse<CustomerDto>> GetCustomerList()
         {
-            return "value";
+            return await _customerService.GetCustomerList();
         }
 
-        // POST api/<CustomersController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+
+        [HttpGet("GetCustomerById/{id}")]
+        public async Task<ServiceResponse<CustomerDto>> GetCustomerById(int id)
         {
+            return await _customerService.GetCustomerById(id);
         }
 
-        // PUT api/<CustomersController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+
+        [HttpPost("SaveCustomer")]
+        public async Task<ServiceResponse<CustomerDto>> SaveCustomer(CustomerDto modelDto)
         {
+            return await _customerService.SaveCustomer(modelDto);
         }
 
-        // DELETE api/<CustomersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+
+        [HttpDelete("DeleteCustomerById/{id}")]
+        public async Task<ServiceResponse<CustomerDto>> DeleteCustomerById(int id)
         {
+            return await _customerService.DeleteCustomerById(id);
         }
     }
 }

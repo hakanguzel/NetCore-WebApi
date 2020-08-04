@@ -29,6 +29,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\Hakan\\source\\repos\\BasicApi\\BasicApi.Core\\BasicApi.Core.csproj": {
+                "projectPath": "C:\\Users\\Hakan\\source\\repos\\BasicApi\\BasicApi.Core\\BasicApi.Core.csproj"
+              },
               "C:\\Users\\Hakan\\source\\repos\\BasicApi\\BasicApi.Data\\BasicApi.Data.csproj": {
                 "projectPath": "C:\\Users\\Hakan\\source\\repos\\BasicApi\\BasicApi.Data\\BasicApi.Data.csproj"
               }
@@ -43,6 +46,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -173,6 +182,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -243,6 +262,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.6, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [
